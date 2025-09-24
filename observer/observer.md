@@ -82,7 +82,7 @@ void detach(Observer* observer) override {
      - 起始迭代器
      - 结束迭代器
      - 判断条件（lambda表达式）
-   - 返回：新的逻辑末尾迭代器
+   - 返回：std::remove_if 返回的是第一个无效元素的迭代器
 
 2. **Lambda表达式**
    ```cpp

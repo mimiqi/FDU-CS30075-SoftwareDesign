@@ -102,13 +102,16 @@ class ConcreteObserver : public Observer{
 int main(){
 
     ConcreteSubject subject;
-    ConcreteObserver observer;
-    subject.attach(&observer);
+    ConcreteObserver observer1;
+    ConcreteObserver observer2;
+    subject.attach(&observer1);
+    subject.attach(&observer2);
     subject.setState(1);
     subject.notify();
+    subject.detach(&observer1);
     subject.setState(2);
     subject.notify();
-    subject.detach(&observer);
+    subject.detach(&observer2);
 
     return 0;
 }
